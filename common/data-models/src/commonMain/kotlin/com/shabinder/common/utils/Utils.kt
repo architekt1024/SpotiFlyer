@@ -16,5 +16,5 @@ val globalJson by lazy {
  * Removing Illegal Chars from File Name
  * **/
 fun removeIllegalChars(fileName: String): String {
-    return fileName.replace("[^\\dA-Za-z0-9-_]".toRegex(), "_")
+    return fileName.trim().replace("[<>:\"/\\\\|?*\\x00-\\x19\\xF7]".toRegex(), "_")
 }
